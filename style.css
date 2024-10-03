@@ -458,6 +458,20 @@ p {
 	/* max-width: 400px; */
 	width: 100%;
 }
+.contact {
+	perspective: 1000px; /* Enables 3D space */
+  }
+  
+  .contact-item {
+	transition: transform 0.2s ease; /* Smooth transition for the transform property */
+	transform-style: preserve-3d; /* Ensure child elements are transformed in 3D space */
+  }
+  
+  .icon {
+	width: 60px; /* Adjust icon size */
+	height: 60px; /* Adjust icon size */
+  }
+  
 #contact .contact-item {
 	width: 80%;
 	padding: 20px;
