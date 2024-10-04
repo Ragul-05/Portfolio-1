@@ -40,3 +40,54 @@ window.addEventListener('deviceorientation', (event) => {
     item.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const textElement = document.getElementById('typewriter-text');
+    const cursorElement = document.querySelector('.cursor');
+    const words = [
+        'Hello, This is Ragul',
+        'A Passionate Dreamer Chasing Goals',
+        'A Creative Mind Crafting Unique Solutions',
+        'An Innovator Turning Ideas into Reality',
+        'An Achiever Dedicated to Lifelong Learning'
+    ];
+
+    function typeWriter() {
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (charIndex < currentWord.length && !isDeleting) {
+                textElement.textContent += currentWord[charIndex];
+                charIndex++;
+                setTimeout(type, 80); // Adjust typing speed
+            } else if (isDeleting) {
+                if (charIndex > 0) {
+                    textElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(type, 60); // Adjust erasing speed
+                } else {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(type, 300); // Wait before typing next word
+                }
+            } else {
+                isDeleting = true;
+                setTimeout(type, 1500); // Wait before erasing
+            }
+            updateCursor();
+        }
+
+        function updateCursor() {
+            const isTyping = charIndex < words[wordIndex].length;
+            cursorElement.style.transform = isTyping ? 'translateX(0)' : 'translateX(-1ch)'; // Move cursor slightly left when typing
+        }
+
+        type(); // Start typing loop
+    }
+
+    typeWriter(); // Initialize typewriter effect
+});

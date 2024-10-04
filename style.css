@@ -58,6 +58,8 @@ p {
 	transition: 0.3s ease;
 	transition-property: background-color, color;
 }
+
+
 .cta:hover {
 	color: white;
 	background-color: crimson;
@@ -262,6 +264,15 @@ p {
 	animation-delay: 2.5s;
 }
 
+.typewriter-container {
+    font-family: 'Protest Strike', sans-serif;
+    font-size: 70px;
+    color: crimson;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
 /* End Hero Section */
 
 /* Services Section */
@@ -461,6 +472,87 @@ p {
 	z-index: -1;
 }
 /* End About Section */
+
+/* Start of Education */
+
+.education-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px; /* Added margin to space it from the title */
+}
+
+.education-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space between each card */
+    width: 100%;
+    max-width: 600px; /* Consistent width */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for a lifted effect */
+}
+
+.education-icon {
+    width: 80px; /* Adjust icon size */
+    height: auto;
+    margin-right: 15px;
+}
+
+.education-info {
+    flex-grow: 1;
+    text-align: center; /* Center align the text */
+}
+
+.education-info h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.education-info h2 {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.about_me_button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Space above the button */
+}
+
+.about_me_button:hover {
+    background-color: #0056b3;
+}
+
+/*End of Education */
+
+.card {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow: 0px 0px 20px rgba(87, 78, 78, 0.2); 
+}
+
+.card:hover {
+    transform: perspective(1000px) translateZ(20px);
+}
+
+.card-body {
+    transform-style: preserve-3d;
+    transform: translateZ(50px); /* Adjust the translateZ value as needed */
+}
+
+.section_titles {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    font-size: 50px;
+}
 
 /* contact Section */
 #contact .contact {
